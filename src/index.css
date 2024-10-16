@@ -1,13 +1,99 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-300px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+@keyframes flicker {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.animate-flicker {
+  animation: flicker 1s infinite;
+}
+/* Custom styles */
+
+.bg-peach {
+  background-color: #FFD1DC;
+}
+
+.btn-primary {
+  @apply bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700;
+}
+
+.balloon {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-300px);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+body {
+	/*background-color: #f170a6;	*/
+	background-color: #000;
+	-webkit-transition:background-color linear 5s;
+	-moz-transition:background-color linear 5s;
+	-o-transition:background-color linear 5s;
+	-ms-transition:background-color linear 5s;
+	transition:background-color linear 5s;
+	overflow-x:hidden;
+}
+.container {
+	display: none;
+}
+.peach {
+	/* background-image: url("bd1.jpg"); */
+	background-color: #f170a6;
+	
+}
+.peach-after {
+	-webkit-animation:peach_alive linear 8s infinite;
+	-moz-animation:peach_alive linear 8s infinite;
+	-o-animation:peach_alive linear 8s infinite;
+	-ms-animation:peach_alive linear 8s infinite;
+	animation:peach_alive linear 8s infinite;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(100%); /* Start from below */
+    opacity: 0; /* Start invisible */
+  }
+  100% {
+    transform: translateY(0); /* End at original position */
+    opacity: 1; /* End fully visible */
+  }
+}
+
+.animate-floatUp {
+  animation: floatUp 1s forwards; /* Adjust duration as needed */
 }

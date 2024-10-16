@@ -36,3 +36,19 @@
     transform: rotate(360deg);
   }
 }
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(100%); /* Start from below */
+    opacity: 0; /* Start invisible */
+  }
+  100% {
+    transform: translateY(0); /* End at original position */
+    opacity: 1; /* End fully visible */
+  }
+}
+
+.balloon-border {
+  animation: floatUp 1s forwards; /* Adjust duration as needed */
+}
+
