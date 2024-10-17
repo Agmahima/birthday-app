@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 
 const messages = [
   'Many Many Happy Returns of the Day!!!!! Google Boy :)',
-  'A very Happy Birthday to u',
-  'God',
-  'Bless',
-  'You!!!!',
+  'A very Happy Birthday to Someone Special....',
+  'Happiest Birthday to youuuuuu.....',
+  'Achieve all the Goals u have in your life',
+ 
 ];
 
 const Message = ({ showFinalMessage }) => {
